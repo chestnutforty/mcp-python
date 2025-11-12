@@ -91,6 +91,56 @@ Code runs in isolated Docker containers with:
 - Temporary container lifecycle
 - Sandboxed filesystem
 
+## Testing
+
+### Setup
+
+1. Install test dependencies:
+```bash
+uv pip install -e ".[test]"
+```
+
+2. Ensure Docker is installed and running:
+```bash
+docker --version
+docker ps
+```
+
+### Running Tests
+
+Run all tests:
+```bash
+pytest
+```
+
+Run with verbose output:
+```bash
+pytest -v
+```
+
+Run specific test file:
+```bash
+pytest tests/test_python_server.py
+```
+
+Run specific test:
+```bash
+pytest tests/test_python_server.py::test_basic_print -v
+```
+
+### Test Coverage
+
+The test suite covers:
+- **Basic operations**: Print statements, arithmetic, string manipulation
+- **Data structures**: Lists, dictionaries, operations on collections
+- **Standard library**: Imports of common modules (math, json, datetime)
+- **Functions**: Function definition and recursion
+- **Error handling**: Exception capture and syntax errors
+- **Output handling**: Single and multiline output
+- **Package availability**: Testing for optional packages (e.g., numpy)
+
+**Note**: Tests execute real Python code in Docker containers. Ensure Docker is running before testing. Test execution may be slower due to container startup overhead.
+
 ## License
 
 See the main gpt-oss repository for license information.
