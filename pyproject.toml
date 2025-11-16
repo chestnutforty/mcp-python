@@ -5,7 +5,7 @@ description = "MCP server for Python code execution in Docker"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-    "fastmcp>=2.8",
+    "fastmcp>=2.13",
     "gpt-oss @ git+https://github.com/chestnutforty/gpt-oss.git",
 ]
 
